@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension version="3.2" type="plugin" group="content" method="upgrade">
+        <name>Content - Author Links</name>
+        <author>Mattia Verga</author>
+        <creationDate>June 2016</creationDate>
+        <copyright>Copyright (C) 2016 Mattia Verga. All rights reserved.</copyright>
+        <license>GNU General Public License version 3 or later.</license>
+        <authorEmail>mattia.verga@tiscali.it</authorEmail>
+        <version>1.0</version>
+        <description>PLG_CONTENT_AUTHORLINKS_XML_DESCRIPTION</description>
+        <files>
+                <filename plugin="authorlinks">authorlinks.php</filename>
+                <filename>index.html</filename>
+                <folder>language</folder>
+        </files>
+        <languages>
+            <language tag="en-GB">language/en-GB/en-GB.plg_content_authorlinks.ini</language>
+            <language tag="en-GB">language/en-GB/en-GB.plg_content_authorlinks.sys.ini</language>
+            <language tag="it-IT">language/it-IT/it-IT.plg_content_authorlinks.ini</language>
+            <language tag="it-IT">language/it-IT/it-IT.plg_content_authorlinks.sys.ini</language>
+        </languages>
+        <config>
+                <fields name="params">
+
+                        <fieldset name="basic">
+                                <field name="UrlType" type="radio"
+                                        default="0"
+                                        description="PLG_CONTENT_AUTHORLINKS_PARAM_URL_DESCRIPTION"
+                                        label="PLG_CONTENT_AUTHORLINKS_PARAM_URL_LABEL"
+                                >
+                                        <option value="0">PLG_CONTENT_AUTHORLINKS_PARAM_URL_0</option>
+                                        <option value="1">PLG_CONTENT_AUTHORLINKS_PARAM_URL_1</option>
+                                        <option value="2">PLG_CONTENT_AUTHORLINKS_PARAM_URL_2</option>
+                                </field>
+                                
+                                <field name="LinkToAlias" type="radio"
+                                        default="0"
+                                        description="PLG_CONTENT_AUTHORLINKS_PARAM_ALIAS_DESCRIPTION"
+                                        label="PLG_CONTENT_AUTHORLINKS_PARAM_ALIAS_LABEL"
+                                >
+                                        <option value="0">PLG_CONTENT_AUTHORLINKS_PARAM_NO</option>
+                                        <option value="1">PLG_CONTENT_AUTHORLINKS_PARAM_YES</option>
+                                </field>
+                        </fieldset>
+
+                </fields>
+        </config>
+</extension>
