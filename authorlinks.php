@@ -1,4 +1,8 @@
 <?php
+/**
+ * @copyright  Copyright (c) 2016- Mattia Verga. All rights reserved.
+ * @license    GNU General Public License version 3, or later
+ */
 // no direct access
 defined( '_JEXEC' ) or die;
 
