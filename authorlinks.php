@@ -116,9 +116,18 @@ class plgContentAuthorlinks extends JPlugin
                 $query = $db->getQuery(true);
 
                 $query->select($db->quoteName('id'));
-                $query->from($db->quoteName('#__contact_details'));
-                $query->where('published = 1');
-                $query->where($db->quoteName('user_id') . ' = ' . (int) $created_by);
+                $query->from($db->quoteName('#__contact_details', 'contact'));
+                $query->where('contact.published = 1');
+                $query->where('contact.user_id = ' . (int) $created_by);
+
+
+                if (JLanguageMultilang::isEnabled() == 1)
+                {
+                    $query->where('(contact.language in '
+                        . '(' . $db->quote(JFactory::getLanguage()->getTag()) . ',' . $db->quote('*') . ') '
+                        . 'OR contact.language IS NULL) ' 
+                        . 'ORDER BY contact.language REGEXP \'^[a-z]\' DESC, contact.language');
+                }
 
                 $db->setQuery($query);
                 $result = $db->loadResult();
@@ -140,9 +149,18 @@ class plgContentAuthorlinks extends JPlugin
                 $query = $db->getQuery(true);
                 
                 $query->select($db->quoteName('webpage'));
-                $query->from($db->quoteName('#__contact_details'));
-                $query->where($db->quoteName('user_id') . ' = ' . (int) $author_id);
-                
+                $query->from($db->quoteName('#__contact_details', 'contact'));
+                $query->where('contact.published = 1');
+                $query->where($db->quoteName('contact.user_id') . ' = ' . (int) $author_id);
+
+                if (JLanguageMultilang::isEnabled() == 1)
+                {
+                    $query->where('(contact.language in '
+                        . '(' . $db->quote(JFactory::getLanguage()->getTag()) . ',' . $db->quote('*') . ') '
+                        . 'OR contact.language IS NULL) ' 
+                        . 'ORDER BY contact.language REGEXP \'^[a-z]\' DESC, contact.language');
+                }
+
                 $db->setQuery($query);
                 $result = $db->loadResult();
                 
@@ -163,9 +181,18 @@ class plgContentAuthorlinks extends JPlugin
                 $query = $db->getQuery(true);
                 
                 $query->select($db->quoteName('email_to'));
-                $query->from($db->quoteName('#__contact_details'));
-                $query->where($db->quoteName('user_id') . ' = ' . (int) $author_id);
-                
+                $query->from($db->quoteName('#__contact_details', 'contact'));
+                $query->where('contact.published = 1');
+                $query->where($db->quoteName('contact.user_id') . ' = ' . (int) $author_id);
+
+                if (JLanguageMultilang::isEnabled() == 1)
+                {
+                    $query->where('(contact.language in '
+                        . '(' . $db->quote(JFactory::getLanguage()->getTag()) . ',' . $db->quote('*') . ') '
+                        . 'OR contact.language IS NULL) ' 
+                        . 'ORDER BY contact.language REGEXP \'^[a-z]\' DESC, contact.language');
+                }
+
                 $db->setQuery($query);
                 $result = $db->loadResult();
                 
