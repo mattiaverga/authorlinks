@@ -149,6 +149,7 @@ class plgContentAuthorlinks extends JPlugin
                 
                 $query->select($db->quoteName('webpage'));
                 $query->from($db->quoteName('#__contact_details', 'contact'));
+                $query->where('contact.published = 1');
                 $query->where($db->quoteName('contact.user_id') . ' = ' . (int) $author_id);
 
                 if (JLanguageMultilang::isEnabled() == 1)
@@ -179,6 +180,7 @@ class plgContentAuthorlinks extends JPlugin
                 
                 $query->select($db->quoteName('email_to'));
                 $query->from($db->quoteName('#__contact_details', 'contact'));
+                $query->where('contact.published = 1');
                 $query->where($db->quoteName('contact.user_id') . ' = ' . (int) $author_id);
 
                 if (JLanguageMultilang::isEnabled() == 1)
