@@ -125,7 +125,8 @@ class plgContentAuthorlinks extends JPlugin
                 {
                     $query->where('(contact.language in '
                         . '(' . $db->quote(JFactory::getLanguage()->getTag()) . ',' . $db->quote('*') . ') '
-                        . ' OR contact.language IS NULL)');
+                        . 'OR contact.language IS NULL) ' 
+                        . 'ORDER BY contact.language REGEXP \'^[a-z]\' DESC, contact.language');
                 }
 
                 $db->setQuery($query);
@@ -156,7 +157,8 @@ class plgContentAuthorlinks extends JPlugin
                 {
                     $query->where('(contact.language in '
                         . '(' . $db->quote(JFactory::getLanguage()->getTag()) . ',' . $db->quote('*') . ') '
-                        . ' OR contact.language IS NULL)');
+                        . 'OR contact.language IS NULL) ' 
+                        . 'ORDER BY contact.language REGEXP \'^[a-z]\' DESC, contact.language');
                 }
 
                 $db->setQuery($query);
@@ -187,7 +189,8 @@ class plgContentAuthorlinks extends JPlugin
                 {
                     $query->where('(contact.language in '
                         . '(' . $db->quote(JFactory::getLanguage()->getTag()) . ',' . $db->quote('*') . ') '
-                        . ' OR contact.language IS NULL)');
+                        . 'OR contact.language IS NULL) ' 
+                        . 'ORDER BY contact.language REGEXP \'^[a-z]\' DESC, contact.language');
                 }
 
                 $db->setQuery($query);
