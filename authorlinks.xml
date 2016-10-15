@@ -2,7 +2,7 @@
 <extension version="3.2" type="plugin" group="content" method="upgrade">
         <name>Content - Author Links</name>
         <author>Mattia Verga</author>
-        <creationDate>June 2016</creationDate>
+        <creationDate>15 October 2016</creationDate>
         <copyright>Copyright (C) 2016 Mattia Verga. All rights reserved.</copyright>
         <license>GNU General Public License version 3 or later.</license>
         <authorEmail>mattia.verga@tiscali.it</authorEmail>
