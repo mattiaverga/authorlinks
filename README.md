@@ -1,6 +1,6 @@
 # Joomla Content - Authorlinks plugin
 
-**Functionality provided by this plugin is going to be merged in Joomla 3.9 core, so there will be no more updates on this page.**
+**Functionality provided by this plugin is going to be merged in Joomla 3.9 core Content - Contacts plugin, so there will be no more updates on this page.**
 
 This is the Content - Authorlinks plugin for Joomla 3.2+.
 
